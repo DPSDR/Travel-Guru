@@ -1,5 +1,16 @@
 .App {
   text-align: center;
+  background-image: url('./images/Rectangle\ 1.png');
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  background-size: cover;
+  background-position: center;
+
+}
+
+.App::before {
+  filter: brightness(0.6);
 }
 
 .App-logo {
@@ -32,6 +43,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
