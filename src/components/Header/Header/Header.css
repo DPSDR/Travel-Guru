@@ -1,0 +1,19 @@
+.header a {
+    margin: 0 2rem 0 2rem;
+    text-decoration: none;
+    color: white;
+    font-family: Montserrat;
+    font-size: 17px;
+}
+
+
+.input_style {
+    width: 250px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.input_style::placeholder {
+    color: rgb(165, 155, 155)
+}

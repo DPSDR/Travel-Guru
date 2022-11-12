@@ -1,11 +1,19 @@
 .App {
   text-align: center;
-  background-image: url('./images/Rectangle\ 1.png');
-  position: fixed;
+}
+
+.App::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('../public/images/Rectangle_1.png');
   min-width: 100%;
   min-height: 100%;
   background-size: cover;
   background-position: center;
+  filter: brightness(.5);
+  z-index: -1;
 
 }
 
