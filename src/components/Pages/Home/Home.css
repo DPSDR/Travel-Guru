@@ -1,0 +1,15 @@
+.home-intro {
+    margin-top: 10rem;
+}
+
+.home-intro h1 {
+    font-family: Bebas Neue;
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.home-intro p {
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 400;
+}
