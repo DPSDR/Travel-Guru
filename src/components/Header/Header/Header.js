@@ -11,7 +11,7 @@ const Header = () => {
             <Link to='/destination'>Destination</Link>
             <Link to='/contact'>Contact</Link>
             <Link to='/blog'>Blog</Link>
-            <Link><button className='btn btn-warning py-2 px-4 fw-semibold'>Login</button></Link>
+            <Link to='/login'><button className='btn btn-warning py-2 px-4 fw-semibold'>Login</button></Link>
         </div>
     );
 };
