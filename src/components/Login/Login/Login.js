@@ -1,12 +1,33 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import './Login.css'
 
+
 const Login = () => {
+    const emailRef = useRef('');
+    const passwordRef = useRef('');
+    const [
+        signInWithEmailAndPassword,
+        user,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+
     const handleLogin = event => {
         event.preventDefault()
+        const email = emailRef.current.value;
+        const password = passwordRef.current.value;
+
+        signInWithEmailAndPassword(email, password)
+    }
+    if (user) {
+        console.log(user)
+    }
+    if (error) {
+        console.log(error)
     }
 
     return (
@@ -16,12 +37,12 @@ const Login = () => {
                     <h3 className='fw-bolder'>Login</h3>
                     <Form.Group className="mb-3 mt-4" controlId="formBasicEmail">
                         <Form.Label>Username or Email address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" />
+                        <Form.Control ref={emailRef} type="email" placeholder="Enter email" />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" />
+                        <Form.Control ref={passwordRef} type="password" placeholder="Password" />
                     </Form.Group>
                     <Form.Group className="mb-3 d-flex justify-content-lg-between" controlId="formBasicCheckbox">
                         <Form.Check type="checkbox" label="Remember Me" />
